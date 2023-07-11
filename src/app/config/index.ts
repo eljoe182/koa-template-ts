@@ -6,4 +6,7 @@ const env = (key: string, defaultValue: string) => {
 
 export default {
   PORT: env('PORT', '3000'),
+  DATABASES: {
+    MONGODB_URI: env('MONGODB_URI', 'mongodb://localhost:27017/'),
+  }
 }
