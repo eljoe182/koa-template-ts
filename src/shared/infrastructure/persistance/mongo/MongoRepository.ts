@@ -1,6 +1,6 @@
 import { Collection, MongoClient } from 'mongodb';
 
-export abstract class MongoRepository<T = null> {
+export abstract class MongoRepository {
   constructor(private _client: Promise<MongoClient>) { }
 
   protected abstract collectionName(): string;

@@ -3,10 +3,35 @@
   "version": "1.0.0",
   "description": "koa template with TypeScript",
   "main": "index.js",
+  "directories": {
+    "test": "__test__"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "node -r tsconfig-paths/register -r ts-node/register ./src/app/server/index.ts",
+    "ext": "ts, js"
+  },
   "scripts": {
-    "build": "tsx --build",
-    "dev": "ts-node-dev ./src/index.ts",
-    "start": "node ./dist/index.js"
+    "build": "npm run build:clean && npm run build:tsc",
+    "build:clean": "rm -r dist; exit 0",
+    "build:tsc": "tsc -p tsconfig.prod.json",
+    "clean": "rm -r dist; exit 0",
+    "dev": "nodemon",
+    "start": "node -r tsconfig-paths/register -r ts-node/register ./dist/src/app/server/index.js",
+    "prod": "npm run build && npm run start",
+    "check-types": "tsc --noemit",
+    "eslint": "eslint '*/**/*.{js,ts}' --fix --max-warnings=0 --no-error-on-unmatched-pattern",
+    "test": "jest --passWithNoTests --forceExit",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --collect-coverage --collectCoverageFrom=src/context/** --passWithNoTests"
   },
   "author": "Joise Garcia",
   "license": "ISC",
@@ -22,6 +47,8 @@
     "mongodb": "5.7.0",
     "node-dependency-injection": "3.1.0",
     "ts-node": "10.9.1",
+    "tsconfig-paths": "4.2.0",
+    "tsconfig-paths-jest": "0.0.1",
     "typescript": "5.1.6",
     "zod": "3.21.4"
   },
@@ -37,6 +64,7 @@
     "@typescript-eslint/parser": "5.61.0",
     "eslint": "8.44.0",
     "eslint-plugin-prettier": "4.2.1",
+    "nodemon": "3.0.1",
     "prettier": "3.0.0",
     "ts-node-dev": "2.0.0"
   }
