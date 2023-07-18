@@ -1,5 +1,5 @@
 import { Reference } from 'node-dependency-injection';
-import container from '@dependency'
+import container from '@dependency';
 
 import FindMoviesController from '@controllers/example/FindMovies.Controller';
 import FindMoviesUseCase from '@features/example/application/FindMovies.UseCase';

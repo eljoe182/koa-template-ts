@@ -1,4 +1,5 @@
 {
+  "parser": "typescript",
   "tabWidth": 2,
   "semi": true,
   "singleQuote": true,
@@ -9,5 +10,10 @@
     "object": false,
     "imports": false
   },
-  "printWidth": 120
+  "printWidth": 120,
+  "importOrder": [
+    "^[^.]",
+    "^\\."
+  ],
+  "importOrderSeparation": true
 }

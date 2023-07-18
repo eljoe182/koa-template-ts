@@ -8,7 +8,7 @@ const useCase: IBaseUseCase = container.get('Health.UseCase.GetStatus');
 const controllerDependency: IBaseController = container.get('Health.Controller.GetStatus');
 let controller: HealthCheckController;
 
-describe('HealthCheck.Controller', () => {
+describe('HealthCheck.Controller: ', () => {
   
   beforeEach(() => {
     controller = new HealthCheckController(useCase);
@@ -19,7 +19,7 @@ describe('HealthCheck.Controller', () => {
     expect(controller).toBeInstanceOf(HealthCheckController);
   });
 
-  it('should return status', async () => {
+  it('should execute controller', async () => {
     const ctx: Context = {} as unknown as Context;
     const result = await controller.run(ctx);
     expect(result).toBe(void 0);

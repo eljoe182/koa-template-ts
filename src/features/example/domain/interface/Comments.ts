@@ -3,5 +3,5 @@ export interface Comment {
   email: string;
   movie_id: string;
   text: string;
-  date: Date;
+  date?: Date;
 }
