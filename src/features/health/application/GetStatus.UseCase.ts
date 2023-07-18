@@ -1,4 +1,4 @@
-import { IBaseUseCase } from '../../../shared/infrastructure/interfaces/BaseUseCase';
+import { IBaseUseCase } from '@shared/infrastructure/interfaces/BaseUseCase';
 
 export default class GetStatusUseCase implements IBaseUseCase {
   execute(): Promise<unknown> {

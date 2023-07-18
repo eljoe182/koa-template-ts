@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import { MongoRepository } from '../../../../shared/infrastructure/persistance/mongo/MongoRepository';
+import { MongoRepository } from '@persistance/mongo/MongoRepository';
 import { Comment } from '../../domain/interface/Comments';
 import { CommentRepository } from '../interface/CommentRepository';
 

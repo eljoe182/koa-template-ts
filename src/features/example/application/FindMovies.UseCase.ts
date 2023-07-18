@@ -1,5 +1,5 @@
-import { IBaseUseCase } from '../../../shared/infrastructure/interfaces/BaseUseCase';
-import { Pagination } from '../../../shared/infrastructure/interfaces/Pagination';
+import { IBaseUseCase } from '@shared/infrastructure/interfaces/BaseUseCase';
+import { Pagination } from '@shared/infrastructure/interfaces/Pagination';
 import { MovieRepository } from '../infrastructure/interface/MovieRepository';
 
 export default class FindMoviesUseCase implements IBaseUseCase {

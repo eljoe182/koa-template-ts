@@ -2,3 +2,4 @@ node_modules
 restApi
 .env
 package-lock.json
+coverage

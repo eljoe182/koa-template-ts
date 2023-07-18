@@ -1,6 +1,6 @@
 import { Context } from 'koa';
-import { IBaseController } from '../../../shared/infrastructure/interfaces/BaseController';
-import { IBaseUseCase } from '../../../shared/infrastructure/interfaces/BaseUseCase';
+import { IBaseController } from '@shared/infrastructure/interfaces/BaseController';
+import { IBaseUseCase } from '@shared/infrastructure/interfaces/BaseUseCase';
 
 export default class AddCommentController implements IBaseController {
   constructor(private useCase: IBaseUseCase) {}

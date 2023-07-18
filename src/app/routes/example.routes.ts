@@ -1,8 +1,8 @@
 import Router from 'koa-router';
 import { Context } from 'koa';
-import { IBaseController } from '../../shared/infrastructure/interfaces/BaseController';
-import { MoviesDependency, CommentsDependency } from '../dependencyInjections'
-import { CommentSchema } from '../../features/example/domain/adapter/CommentAdapter';
+import { IBaseController } from '@shared/infrastructure/interfaces/BaseController';
+import { MoviesDependency, CommentsDependency } from '@dependencies'
+import { CommentSchema } from '@features/example/domain/adapter/CommentAdapter';
 
 export const register = (router: Router): void => {
   const movieControllerFind: IBaseController = MoviesDependency.get('Movies.Controller.Find');

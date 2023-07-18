@@ -3,7 +3,7 @@ import cors from "koa2-cors";
 import bodyParser from 'koa-bodyparser';
 import logger from 'koa-logger';
 import Router from 'koa-router';
-import { registerRoutes } from "../routes";
+import { registerRoutes } from "@routes";
 
 export class Server {
   private readonly port: number

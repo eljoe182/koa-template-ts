@@ -1,5 +1,5 @@
-import { Pagination } from '../../../../shared/infrastructure/interfaces/Pagination';
-import { MongoRepository } from '../../../../shared/infrastructure/persistance/mongo/MongoRepository';
+import { Pagination } from '@shared/infrastructure/interfaces/Pagination';
+import { MongoRepository } from '@persistance/mongo/MongoRepository';
 import { MovieRepository } from '../interface/MovieRepository';
 
 export class MongoMovieRepository extends MongoRepository implements MovieRepository<Pagination | unknown, unknown> {

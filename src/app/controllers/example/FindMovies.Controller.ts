@@ -1,7 +1,7 @@
 import { Context } from 'koa';
-import { IBaseController } from '../../../shared/infrastructure/interfaces/BaseController';
-import { IBaseUseCase } from '../../../shared/infrastructure/interfaces/BaseUseCase';
-import { Pagination } from '../../../shared/infrastructure/interfaces/Pagination';
+import { IBaseController } from '@shared/infrastructure/interfaces/BaseController';
+import { IBaseUseCase } from '@shared/infrastructure/interfaces/BaseUseCase';
+import { Pagination } from '@shared/infrastructure/interfaces/Pagination';
 
 export default class FindMoviesController implements IBaseController {
   constructor(private useCase: IBaseUseCase) {}

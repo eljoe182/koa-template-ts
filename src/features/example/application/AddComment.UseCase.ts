@@ -1,4 +1,4 @@
-import { IBaseUseCase } from '../../../shared/infrastructure/interfaces/BaseUseCase';
+import { IBaseUseCase } from '@shared/infrastructure/interfaces/BaseUseCase';
 import { Comment } from '../domain/interface/Comments';
 import { CommentRepository } from '../infrastructure/interface/CommentRepository';
 

@@ -31,7 +31,7 @@
     "eslint": "eslint '*/**/*.{js,ts}' --fix --max-warnings=0 --no-error-on-unmatched-pattern",
     "test": "jest --passWithNoTests --forceExit",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --collect-coverage --collectCoverageFrom=src/context/** --passWithNoTests"
+    "test:coverage": "jest --collect-coverage --collectCoverageFrom=src/features/** --passWithNoTests"
   },
   "author": "Joise Garcia",
   "license": "ISC",
@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@types/glob": "8.1.0",
+    "@types/jest": "29.5.3",
     "@types/koa": "2.13.6",
     "@types/koa-bodyparser": "4.3.10",
     "@types/koa-logger": "3.1.2",
@@ -66,6 +67,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "nodemon": "3.0.1",
     "prettier": "3.0.0",
+    "ts-jest": "29.1.1",
     "ts-node-dev": "2.0.0"
   }
 }

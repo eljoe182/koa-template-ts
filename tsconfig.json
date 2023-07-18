@@ -15,11 +15,19 @@
     "baseUrl": ".",
     "paths": {
       "@features/*": ["src/features/*"],
-      "@test/*": ["__test__/*"],
+      "@test/*": ["__tests__/*"],
       "@app/*": ["src/app/*"],
-      "@root/*": ["./*"]
+      "@root/*": ["./*"],
+      "@shared/*": ["src/shared/*"],
+      "@controllers/*": ["src/app/controllers/*"],
+      "@routes/*": ["src/app/routes/*"],
+      "@routes": ["src/app/routes/index"],
+      "@dependencies/*": ["src/app/dependencyInjections/*"],
+      "@dependencies": ["src/app/dependencyInjections/index"],
+      "@dependency": ["src/shared/infrastructure/dependency/index.ts"],
+      "@persistance/*": ["src/shared/infrastructure/persistance/*"]
     }
   },
-  "include": ["src/**/**.ts", "test/**/**.ts"],
+  "include": ["src/**/**.ts", "__tests__/**/**.ts"],
   "exclude": ["node_modules"]
 }
