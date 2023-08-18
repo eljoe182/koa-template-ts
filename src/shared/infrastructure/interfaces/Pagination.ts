@@ -1,3 +1,8 @@
+interface query {
+  limit: string;
+  skip: string;
+}
+
 export class Pagination {
   limit: number;
   skip: number;
@@ -6,8 +11,7 @@ export class Pagination {
     this.skip = parseInt(skip || '0');
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  static fromQuery(query: any): Pagination {
+  static fromQuery(query: query): Pagination {
     return new Pagination(query.limit, query.skip);
   }
 }
