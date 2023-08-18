@@ -1,7 +1,7 @@
 import Router from 'koa-router';
 import { Context } from 'koa';
 import { IBaseController } from '@shared/infrastructure/interfaces/BaseController';
-import { TaskDependency as container } from '@dependencies';
+import { TaskDependency as container, JsonPlaceHolderDependency as JPHContainer } from '@dependencies';
 
 export const register = (router: Router): void => {
   const addController: IBaseController = container.get('Tasks.Controller.Add');
@@ -9,6 +9,8 @@ export const register = (router: Router): void => {
   const findController: IBaseController = container.get('Tasks.Controller.Find');
   const updateController: IBaseController = container.get('Tasks.Controller.Update');
   const destroyController: IBaseController = container.get('Tasks.Controller.Destroy');
+
+  const getAllPostController: IBaseController = JPHContainer.get('Posts.Controller.GetAll');
 
   router.get('/all-tasks', async (ctx: Context): Promise<void> => {
     await getAllController.run(ctx);
@@ -28,5 +30,9 @@ export const register = (router: Router): void => {
 
   router.delete('/destroy-task/:id', async (ctx: Context): Promise<void> => {
     await destroyController.run(ctx);
+  });
+
+  router.get('/all-posts', async (ctx: Context): Promise<void> => {
+    await getAllPostController.run(ctx);
   });
 };
