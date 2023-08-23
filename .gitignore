@@ -3,3 +3,4 @@ restApi
 .env
 package-lock.json
 coverage
+logs
