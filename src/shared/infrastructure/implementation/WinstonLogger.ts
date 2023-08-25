@@ -41,11 +41,11 @@ class WinstonLogger implements Logger {
     this.logger.debug(message);
   }
 
-  error(message: string | Error | any) {
+  error(message: string | Error | unknown) {
     this.logger.error(message);
   }
 
-  info(message: any) {
+  info(message: unknown) {
     this.logger.info(message);
   }
 }

@@ -9,7 +9,6 @@ const controllerDependency: IBaseController = container.get('Health.Controller.G
 let controller: HealthCheckController;
 
 describe('HealthCheck.Controller: ', () => {
-  
   beforeEach(() => {
     controller = new HealthCheckController(useCase);
   });

@@ -10,7 +10,7 @@ export default class UpdateTaskController implements IBaseController {
   async run(ctx: Context): Promise<void> {
     const task = ctx.request.body as Task;
     const id = ctx.params.id as string;
-    
+
     const data: UpdateTask = { id, task };
 
     await this.useCase.execute(data);

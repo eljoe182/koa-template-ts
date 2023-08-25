@@ -5,7 +5,7 @@ import config from '../config';
 
 export default class JsonPlaceHolderRepository extends JsonPlaceHolderClient implements PostRepository {
   async getPosts() {
-    const { status, data } = await this.get<Post[]>(config.GET_ALL_POSTS, { 'content-type': 'application/json' });
+    const { status, data } = await this.get<Post[]>(config.GET_ALL_POSTS);
     if (status === 200) {
       return data;
     }

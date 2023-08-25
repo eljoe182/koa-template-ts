@@ -1,6 +1,6 @@
-import GetAllTasksUseCase from "@features/example/application/GetAllTasks.UseCase";
-import { TaskRepository } from "@features/example/infrastructure/interface/TaskRepository";
-import { TaskMother } from "@test/shared/domain/TaskMother";
+import GetAllTasksUseCase from '@features/example/application/GetAllTasks.UseCase';
+import { TaskRepository } from '@features/example/infrastructure/interface/TaskRepository';
+import { TaskMother } from '@test/shared/domain/TaskMother';
 
 describe('Get All Tasks UseCase', () => {
   beforeEach(() => {
@@ -8,10 +8,7 @@ describe('Get All Tasks UseCase', () => {
   });
   it('should return an array of tasks when findAll() function is successful', async () => {
     // Given
-    const mockTasks = [
-      TaskMother.random(),
-      TaskMother.random(),
-    ];
+    const mockTasks = [TaskMother.random(), TaskMother.random()];
     const taskRepositoryMock: TaskRepository = {
       findAll: jest.fn().mockResolvedValue(mockTasks),
       get: jest.fn(),

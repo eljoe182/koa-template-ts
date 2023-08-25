@@ -29,6 +29,8 @@ container.register('Tasks.UseCase.Update', UpdateTaskUseCase).addArgument(new Re
 container.register('Tasks.Controller.Update', UpdateTaskController).addArgument(new Reference('Tasks.UseCase.Update'));
 
 container.register('Tasks.UseCase.Destroy', DestroyTaskUseCase).addArgument(new Reference('Tasks.Repository'));
-container.register('Tasks.Controller.Destroy', DestroyTaskController).addArgument(new Reference('Tasks.UseCase.Destroy'));
+container
+  .register('Tasks.Controller.Destroy', DestroyTaskController)
+  .addArgument(new Reference('Tasks.UseCase.Destroy'));
 
 export default container;

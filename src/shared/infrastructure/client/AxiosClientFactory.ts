@@ -3,6 +3,7 @@ import container from '@dependency';
 import { Logger } from 'winston';
 export default abstract class AxiosClientFactory {
   private logger: Logger = container.get('Shared.Logger');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private axiosInstance: any = axios.create({});
   private request: string = '';
   private requestTime: Date | null = null;
@@ -23,6 +24,7 @@ export default abstract class AxiosClientFactory {
       this.handleInterceptors();
 
       return await this.axiosInstance({ method, url, headers, data, timeout });
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       return error.response;
     }

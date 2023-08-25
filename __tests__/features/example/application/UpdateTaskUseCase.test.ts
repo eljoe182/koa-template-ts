@@ -1,7 +1,7 @@
-import UpdateTaskUseCase from "@features/example/application/UpdateTask.UseCase";
-import { UpdateTask } from "@features/example/domain/interface/UpdateTask";
-import { TaskRepository } from "@features/example/infrastructure/interface/TaskRepository";
-import { TaskMother } from "@test/shared/domain/TaskMother";
+import UpdateTaskUseCase from '@features/example/application/UpdateTask.UseCase';
+import { UpdateTask } from '@features/example/domain/interface/UpdateTask';
+import { TaskRepository } from '@features/example/infrastructure/interface/TaskRepository';
+import { TaskMother } from '@test/shared/domain/TaskMother';
 
 describe('Update Task UseCase', () => {
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('Update Task UseCase', () => {
     const taskParams: UpdateTask = {
       id: taskId,
       task,
-    }
+    };
     const taskRepositoryMock: TaskRepository = {
       findAll: jest.fn(),
       get: jest.fn(),

@@ -1,6 +1,6 @@
-import DestroyTaskUseCase from "@features/example/application/DestroyTask.UseCase";
-import { TaskRepository } from "@features/example/infrastructure/interface/TaskRepository";
-import { TaskMother } from "@test/shared/domain/TaskMother";
+import DestroyTaskUseCase from '@features/example/application/DestroyTask.UseCase';
+import { TaskRepository } from '@features/example/infrastructure/interface/TaskRepository';
+import { TaskMother } from '@test/shared/domain/TaskMother';
 
 describe('Destroy Task UseCase', () => {
   beforeEach(() => {

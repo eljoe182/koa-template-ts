@@ -1,8 +1,8 @@
-import 'dotenv/config'
+import 'dotenv/config';
 
 const env = (key: string, defaultValue: string) => {
-  return process.env[key] || defaultValue
-}
+  return process.env[key] || defaultValue;
+};
 
 export default {
   LOGGER_LEVELS: {

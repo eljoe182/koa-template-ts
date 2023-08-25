@@ -1,6 +1,6 @@
-import GetAllPostUseCase from "@features/example/application/GetAllPost.UseCase";
-import { PostRepository } from "@features/example/infrastructure/interface/PostRepository";
-import { PostMother } from "@test/shared/domain/PostMother";
+import GetAllPostUseCase from '@features/example/application/GetAllPost.UseCase';
+import { PostRepository } from '@features/example/infrastructure/interface/PostRepository';
+import { PostMother } from '@test/shared/domain/PostMother';
 
 describe('Get All Posts UseCase', () => {
   beforeEach(() => {
@@ -8,10 +8,7 @@ describe('Get All Posts UseCase', () => {
   });
   it('should return all posts from the repository', async () => {
     // Given
-    const mockPosts = [
-      PostMother.random(),
-      PostMother.random(),
-    ];
+    const mockPosts = [PostMother.random(), PostMother.random()];
     const mockRepository: PostRepository = {
       getPosts: jest.fn().mockResolvedValue(mockPosts),
     };

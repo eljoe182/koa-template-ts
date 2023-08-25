@@ -1,5 +1,5 @@
-import { Task } from "@features/example/domain/adapter/Task";
-import { BooleanMother, StringMother, TextMother } from "@eljoe182/mother-object-pkg"
+import { Task } from '@features/example/domain/adapter/Task';
+import { BooleanMother, StringMother, TextMother } from '@eljoe182/mother-object-pkg';
 
 export class TaskMother {
   static random(): Task {
