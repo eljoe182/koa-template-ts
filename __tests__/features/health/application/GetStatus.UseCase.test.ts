@@ -6,10 +6,9 @@ const useCaseDependency: IBaseUseCase = container.get('Health.UseCase.GetStatus'
 let useCase: GetStatusUseCase;
 
 describe('GetStatus.UseCase: ', () => {
-
   beforeEach(() => {
     useCase = new GetStatusUseCase();
-  })
+  });
 
   it('should what dependency and class is same', () => {
     expect(useCaseDependency).toBeInstanceOf(GetStatusUseCase);

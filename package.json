@@ -55,6 +55,7 @@
     "zod": "3.21.4"
   },
   "devDependencies": {
+    "@eljoe182/mother-object-pkg": "1.0.0",
     "@types/glob": "8.1.0",
     "@types/jest": "29.5.3",
     "@types/koa": "2.13.6",

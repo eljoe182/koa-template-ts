@@ -21,6 +21,8 @@ module.exports = {
       statements: 80,
     },
   },
+  testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'],
+  testPathIgnorePatterns: ["__tests__/shared"],
   collectCoverageFrom: [
     'src/**/*.ts',
     '!**/interface/**',
