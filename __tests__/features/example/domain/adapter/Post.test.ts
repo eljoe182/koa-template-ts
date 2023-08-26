@@ -6,12 +6,15 @@ describe('Post Adapter', () => {
   });
   it('should initialize all properties with correct values when given a valid post argument', () => {
     // Given
-    const post = new Post({
+    const postData = {
       userId: 1,
       id: 1,
       title: 'Test Title',
       body: 'Test Body',
-    });
+    };
+
+    // When
+    const post = new Post(postData);
 
     // Then
     expect(post.userId).toBe(1);
