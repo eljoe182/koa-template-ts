@@ -17,7 +17,10 @@ import DestroyTaskController from '@app/controllers/example/DestroyTask.Controll
 import DestroyTaskUseCase from '@features/example/application/DestroyTask.UseCase';
 
 container.register('Tasks.UseCase.Add', AddTaskUseCase).addArgument(new Reference('Tasks.Repository'));
-container.register('Tasks.Controller.Add', AddTaskController).addArgument(new Reference('Tasks.UseCase.Add'));
+container
+  .register('Tasks.Controller.Add', AddTaskController)
+  .addArgument(new Reference('Tasks.UseCase.Add'))
+  .addArgument(new Reference('Shared.Stream.Kafka.Producer'));
 
 container.register('Tasks.UseCase.GetAll', GetAllTaskUseCase).addArgument(new Reference('Tasks.Repository'));
 container.register('Tasks.Controller.GetAll', GetAllTaskController).addArgument(new Reference('Tasks.UseCase.GetAll'));

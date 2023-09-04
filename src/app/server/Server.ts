@@ -7,7 +7,7 @@ import logger from 'koa-logger';
 import Router from 'koa-router';
 import { registerRoutes } from '@routes';
 import Logger from '@shared/domain/interfaces/Logger';
-import { PersistanceDependency as container } from '@dependencies';
+import { PersistanceDependency as container, KafkaDependency as kafka } from '@dependencies';
 import helmet from 'koa-helmet';
 
 export class Server {
@@ -42,6 +42,8 @@ export class Server {
         this.logger.info(`Server is running at ${hostname}:${this.port}`);
         resolve();
       });
+      const consumer = kafka.get('Shared.Stream.Kafka.Consumer');
+      consumer.listen(['topic_51']);
     });
   };
 
