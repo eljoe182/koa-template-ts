@@ -55,7 +55,7 @@
     "tsconfig-paths-jest": "0.0.1",
     "typescript": "5.1.6",
     "winston": "3.10.0",
-    "zod": "3.22.2"
+    "zod": "3.22.3"
   },
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
