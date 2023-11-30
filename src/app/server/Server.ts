@@ -1,14 +1,15 @@
 import * as http from 'http';
-import { hostname } from 'os';
 import Koa from 'koa';
-import cors from 'koa2-cors';
 import bodyParser from 'koa-bodyparser';
+import helmet from 'koa-helmet';
 import logger from 'koa-logger';
 import Router from 'koa-router';
+import cors from 'koa2-cors';
+import { hostname } from 'os';
+
+import { PersistanceDependency as container } from '@dependencies';
 import { registerRoutes } from '@routes';
 import Logger from '@shared/domain/interfaces/Logger';
-import { PersistanceDependency as container, KafkaDependency as kafka } from '@dependencies';
-import helmet from 'koa-helmet';
 
 export class Server {
   private readonly port: number;
@@ -42,8 +43,8 @@ export class Server {
         this.logger.info(`Server is running at ${hostname}:${this.port}`);
         resolve();
       });
-      const consumer = kafka.get('Shared.Stream.Kafka.Consumer');
-      consumer.listen(['topic_51']);
+      // const consumer = kafka.get('Shared.Stream.Kafka.Consumer');
+      // consumer.listen(['topic_51']);
     });
   };
 
