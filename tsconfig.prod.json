@@ -1,6 +1,8 @@
 {
+  "compilerOptions": {
+    "sourceMap": false,
+    "baseUrl": ".",
+  },
   "extends": "./tsconfig.json",
-  "sourceMap": false,
-  "baseUrl": ".",
   "exclude": ["node_modules", "__tests__"]
 }
