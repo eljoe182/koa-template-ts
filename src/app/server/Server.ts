@@ -7,9 +7,13 @@ import Router from 'koa-router';
 import cors from 'koa2-cors';
 import { hostname } from 'os';
 
+// import { KafkaDependency as kafka, PersistanceDependency as container } from '@dependencies';
 import { PersistanceDependency as container } from '@dependencies';
 import { registerRoutes } from '@routes';
 import Logger from '@shared/domain/interfaces/Logger';
+
+import { ErrorHandler } from './ErrorHandler';
+import { ErrorRouteHandler } from './ErrorRouteHandler';
 
 export class Server {
   private readonly port: number;
@@ -21,6 +25,7 @@ export class Server {
     this.logger = container.get('Shared.Logger');
     this.port = port;
     this.app = new Koa();
+    this.app.silent = true;
     const router = new Router();
     this.app.use(bodyParser());
     this.app.use(helmet.xssFilter());
@@ -34,7 +39,7 @@ export class Server {
     );
     this.app.use(logger());
     registerRoutes(router);
-    this.app.use(router.routes());
+    this.app.use(ErrorRouteHandler).use(router.routes());
   }
 
   start = async (): Promise<void> => {
@@ -43,6 +48,9 @@ export class Server {
         this.logger.info(`Server is running at ${hostname}:${this.port}`);
         resolve();
       });
+      this.app.on('error', ErrorHandler);
+
+      // TODO: Implement Kafka
       // const consumer = kafka.get('Shared.Stream.Kafka.Consumer');
       // consumer.listen(['topic_51']);
     });

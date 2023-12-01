@@ -4,3 +4,5 @@ restApi
 package-lock.json
 coverage
 logs
+dist
+.vscode
