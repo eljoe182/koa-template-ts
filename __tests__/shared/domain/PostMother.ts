@@ -12,6 +12,6 @@ export class PostMother {
   }
 
   static randomList(): Post[] {
-    return [this.random(), this.random(), this.random()];
+    return [PostMother.random(), PostMother.random(), PostMother.random()];
   }
 }

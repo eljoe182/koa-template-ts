@@ -1,5 +1,5 @@
-import { Task } from '@features/example/domain/adapter/Task';
 import { BooleanMother, StringMother, TextMother } from '@eljoe182/mother-object-pkg';
+import { Task } from '@features/example/domain/adapter/Task';
 
 export class TaskMother {
   static random(): Task {
@@ -12,6 +12,6 @@ export class TaskMother {
   }
 
   static randomList(): Task[] {
-    return [this.random(), this.random(), this.random()];
+    return [TaskMother.random(), TaskMother.random(), TaskMother.random()];
   }
 }
