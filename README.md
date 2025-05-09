@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/eljoe182/koa-template-ts)
+
 ## TypeScript Template with Clean Architecture and Design Patterns
 
 ### Introduction
